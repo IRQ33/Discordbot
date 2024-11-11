@@ -9,3 +9,6 @@
 - Vc channel (making 3 channels and when someone join to it, will create another channel)
 - report system with making new channels
 - maybe music system
+
+>[!Note]
+> Its is ongoing an project
