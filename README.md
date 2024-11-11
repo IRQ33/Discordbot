@@ -1,4 +1,7 @@
 # Its a discord bot
+
+>[!Note]
+> Its is ongoing an project
 ## Funcionality: 
 - Summing 2 numbers (yea i know its useless)
 - Showing informations about player
@@ -10,5 +13,3 @@
 - report system with making new channels
 - maybe music system
 
->[!Note]
-> Its is ongoing an project
