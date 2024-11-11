@@ -39,7 +39,6 @@ public class Sum  implements ICommand {
     public void execute(SlashCommandInteractionEvent slashCommandInteractionEvent) {
         OptionMapping firstnumber = slashCommandInteractionEvent.getOption("number1");
         OptionMapping secondnumber = slashCommandInteractionEvent.getOption("number2");
-        System.out.println("test");
         int number = firstnumber.getAsInt();
         int number2= 1;
         if(secondnumber!= null)
