@@ -2,6 +2,7 @@ package org.example.Listeners;
 
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.events.session.ReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -24,6 +25,8 @@ public class Welcome extends ListenerAdapter {
         {
             System.out.println("- "+guildtoshow.getName());
         }
+        TextChannel textChannel = jda.getTextChannelById(1305559041807749260L);
+        textChannel.sendMessage("est").queue();
 
     }
 
