@@ -1,3 +1,4 @@
 src/main/java/org/example/Bot.java
 target
 /src/main/resources
+*.java

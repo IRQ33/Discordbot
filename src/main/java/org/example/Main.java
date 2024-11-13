@@ -7,11 +7,11 @@ import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import org.example.Commands.Embed;
 import org.example.Commands.Sum;
 import org.example.Commands.UserInfo;
+import org.example.Commands.DeleteMess;
 import org.example.Listeners.Welcome;
 import org.example.Listeners.WelcomeUser;
 
 import java.io.*;
-import java.nio.file.Path;
 import java.util.EnumSet;
 import java.util.Properties;
 
@@ -29,6 +29,7 @@ public class Main {
         commandManager.add(new Sum());
         commandManager.add(new Embed());
         commandManager.add(new UserInfo());
+        commandManager.add(new DeleteMess());
         jda.addEventListener(commandManager);
 
     }

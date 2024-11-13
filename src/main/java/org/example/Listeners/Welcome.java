@@ -20,8 +20,6 @@ public class Welcome extends ListenerAdapter {
         {
             System.out.println("- "+guildtoshow.getName());
         }
-        TextChannel textChannel = jda.getTextChannelById(1305559041807749260L);
-        textChannel.sendMessage("est").queue();
 
     }
 
