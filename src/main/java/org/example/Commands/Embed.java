@@ -29,6 +29,7 @@ public class Embed implements ICommand {
         EmbedBuilder builder = new EmbedBuilder();
         builder.setTitle("Testing");
         builder.setDescription("Epic test");
+        builder.setAuthor(slashCommandInteractionEvent.getMember().getEffectiveName());
 
 
         slashCommandInteractionEvent.replyEmbeds(builder.build()).queue();
