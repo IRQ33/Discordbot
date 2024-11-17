@@ -10,13 +10,13 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommandManager extends ListenerAdapter {
-    private List<ICommand> commands = new ArrayList<>();
+public class HiddenCommandManager extends ListenerAdapter {
+    private List<ICommand> hidecommands = new ArrayList<>();
 
 
     @Override
     public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
-        for (ICommand command : commands)
+        for (ICommand command : hidecommands)
         {
             if(command.getName().equals(event.getName()))
             {
@@ -24,22 +24,21 @@ public class CommandManager extends ListenerAdapter {
                 return;
             }
         }
-
     }
 
     @Override
     public void onReady(@NotNull ReadyEvent event) {
-        for (Guild guild : event.getJDA().getGuilds())
+
+        JDA jda = event.getJDA();
+        Guild guild1 = jda.getGuildById(1301278460404039750L);
+        for (ICommand command : hidecommands)
         {
-            for (ICommand command : commands)
+            if(command.getOptions()!= null)
             {
-                if(command.getOptions()!= null)
-                {
-                    guild.upsertCommand(command.getName(), command.getDescription()).addOptions(command.getOptions()).queue();
-                }
-                else {
-                    guild.upsertCommand(command.getName(), command.getDescription()).queue();
-                }
+                guild1.upsertCommand(command.getName(), command.getDescription()).addOptions(command.getOptions()).queue();
+            }
+            else {
+                guild1.upsertCommand(command.getName(), command.getDescription()).queue();
             }
         }
 
@@ -48,9 +47,8 @@ public class CommandManager extends ListenerAdapter {
     }
 
 
-    public void add(ICommand command)
+    public  void addhidden(ICommand command)
     {
-        commands.add(command);
+        hidecommands.add(command);
     }
-
 }

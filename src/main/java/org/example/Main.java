@@ -4,10 +4,8 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
-import org.example.Commands.Embed;
-import org.example.Commands.Sum;
-import org.example.Commands.UserInfo;
-import org.example.Commands.DeleteMess;
+import net.dv8tion.jda.internal.utils.JDALogger;
+import org.example.Commands.*;
 import org.example.Listeners.Welcome;
 import org.example.Listeners.WelcomeUser;
 
@@ -17,6 +15,7 @@ import java.util.Properties;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        JDALogger.setFallbackLoggerEnabled(false);
         Properties properties=  new Properties();
         InputStream inputStream = Main.class.getClassLoader().getResourceAsStream("config.properties");
         properties.load(inputStream);
@@ -30,6 +29,10 @@ public class Main {
         commandManager.add(new Embed());
         commandManager.add(new UserInfo());
         commandManager.add(new DeleteMess());
+        HiddenCommandManager hiddenCommandManager = new HiddenCommandManager();
+        hiddenCommandManager.addhidden(new LeaveFromGuild());
+        jda.addEventListener(hiddenCommandManager);
+
         jda.addEventListener(commandManager);
 
     }
