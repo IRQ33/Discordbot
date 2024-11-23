@@ -1,11 +1,12 @@
-# Its a discord bot
+# It's a discord bot
 
 >[!Note]
-> Its is ongoing an project
+> Its is ongoing a project
 ## Funcionality: 
-- Summing 2 numbers (yea i know its useless)
-- Showing informations about player
-- Welcome message when someone join and goodbye message when somene left
+- Summing 2 numbers (useless)
+- Showing information about user
+- Welcome message when someone join and goodbye message when someone left
+- Moderation command (I will add more in the future)
 
 ## Todo
 - Vc channel (making 3 channels and when someone join to it, will create another channel)
