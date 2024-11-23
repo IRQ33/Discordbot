@@ -2,7 +2,7 @@
 
 >[!Note]
 > Its is ongoing a project
-## Funcionality: 
+## Functionality: 
 - Summing 2 numbers (useless)
 - Showing information about user
 - Welcome message when someone join and goodbye message when someone left
