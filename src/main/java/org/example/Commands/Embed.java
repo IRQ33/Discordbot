@@ -1,6 +1,7 @@
 package org.example.Commands;
 
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import org.example.ICommand;
@@ -17,6 +18,11 @@ public class Embed implements ICommand {
     @Override
     public String getDescription() {
         return "return of embed";
+    }
+
+    @Override
+    public Collection<Permission> getPermissions() {
+        return List.of(Permission.MESSAGE_SEND);
     }
 
     @Override

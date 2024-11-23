@@ -1,6 +1,7 @@
-package org.example.Commands;
+package org.example.Commands.OwnerCommands;
 
 import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
@@ -20,6 +21,11 @@ public class LeaveFromGuild implements ICommand {
     @Override
     public String getDescription() {
         return "automatic leaving from guild";
+    }
+
+    @Override
+    public Collection<Permission> getPermissions() {
+        return List.of();
     }
 
     @Override

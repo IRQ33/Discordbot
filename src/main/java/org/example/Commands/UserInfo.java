@@ -1,6 +1,7 @@
 package org.example.Commands;
 
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
@@ -23,6 +24,11 @@ public class UserInfo implements ICommand {
     @Override
     public String getDescription() {
         return "Showinginfo";
+    }
+
+    @Override
+    public Collection<Permission> getPermissions() {
+        return List.of(Permission.MESSAGE_SEND);
     }
 
     @Override

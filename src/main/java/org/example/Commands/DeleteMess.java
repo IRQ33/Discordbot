@@ -1,6 +1,7 @@
 package org.example.Commands;
 
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.channel.unions.MessageChannelUnion;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -28,6 +29,11 @@ public class DeleteMess implements ICommand {
     @Override
     public String getDescription() {
         return "Deleting options";
+    }
+
+    @Override
+    public Collection<Permission> getPermissions() {
+        return List.of(Permission.MESSAGE_SEND);
     }
 
     @Override
