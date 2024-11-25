@@ -13,7 +13,6 @@ import org.example.ICommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.awt.*;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
@@ -33,7 +32,7 @@ public class DeleteMess implements ICommand {
 
     @Override
     public Collection<Permission> getPermissions() {
-        return List.of(Permission.MESSAGE_SEND);
+        return List.of(Permission.MESSAGE_MANAGE);
     }
 
     @Override
@@ -51,6 +50,7 @@ public class DeleteMess implements ICommand {
         List<Message> messageList =channel.getHistory().retrievePast(amountofmessage).complete();
         try {
             channel.asTextChannel().deleteMessages(messageList).queue();
+            System.out.println(messageList.toString());
         }
         catch (IllegalArgumentException e)
         {

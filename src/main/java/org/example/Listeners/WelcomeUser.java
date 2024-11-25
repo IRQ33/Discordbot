@@ -18,7 +18,7 @@ public class WelcomeUser extends ListenerAdapter {
         EmbedBuilder builder = new EmbedBuilder();
         builder.setTitle("New person joined!!!");
         builder.setDescription(event.getMember().getEffectiveName());
-        builder.addField("Users: ", event.getGuild().getMembers().size()+" users",true);
+        builder.addField("Users: ", event.getGuild().getMembers().size()+1+" users",true);
         builder.setImage(event.getMember().getEffectiveAvatarUrl());
         assert channel != null;
         channel.sendMessageEmbeds(builder.build()).queue();

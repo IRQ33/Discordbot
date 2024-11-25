@@ -7,6 +7,8 @@ import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import net.dv8tion.jda.internal.utils.JDALogger;
 import org.example.Commands.*;
 import org.example.Commands.AdminCommands.Ban;
+import org.example.Commands.AdminCommands.Mute;
+import org.example.Commands.AdminCommands.UnbanAll;
 import org.example.Commands.OwnerCommands.LeaveFromGuild;
 import org.example.Listeners.Welcome;
 import org.example.Listeners.WelcomeUser;
@@ -28,10 +30,12 @@ public class Main {
 
         CommandManager commandManager = new CommandManager();
         commandManager.add(new Sum());
-        commandManager.add(new Embed());
         commandManager.add(new UserInfo());
         commandManager.add(new DeleteMess());
         commandManager.add(new Ban());
+        commandManager.add(new UnbanAll());
+        commandManager.add(new Mute());
+        commandManager.add(new Unmute());
         HiddenCommandManager hiddenCommandManager = new HiddenCommandManager();
         hiddenCommandManager.addhidden(new LeaveFromGuild());
         jda.addEventListener(hiddenCommandManager);
