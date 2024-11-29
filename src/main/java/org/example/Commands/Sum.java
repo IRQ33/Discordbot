@@ -13,8 +13,6 @@ import java.util.Collection;
 import java.util.List;
 
 public class Sum  implements ICommand {
-
-
     @Override
     public String getName() {
         return "sum";
@@ -35,10 +33,7 @@ public class Sum  implements ICommand {
         List<OptionData> data = new ArrayList<>();
         data.add(new OptionData(OptionType.INTEGER,"number1", "Type first number", true ).setMinValue(1).setMaxValue(100));
         data.add(new OptionData(OptionType.INTEGER,"number2", "Type second number", false ).setMinValue(1).setMaxValue(100));
-
         return data;
-
-
     }
 
     @Override
@@ -52,12 +47,10 @@ public class Sum  implements ICommand {
         {
             number2 = secondnumber.getAsInt();
         }
-
         int calculation = number+number2;
         EmbedBuilder builder = new EmbedBuilder();
         builder.setTitle("Sum");
         builder.setDescription("Sum of this numbers is: "+calculation);
-
         slashCommandInteractionEvent.replyEmbeds(builder.build()).queue();
     }
 }

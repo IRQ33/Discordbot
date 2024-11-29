@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class DeleteMess implements ICommand {
+    //doesnt work :D
     private static final Logger log = LoggerFactory.getLogger(DeleteMess.class);
 
     @Override
@@ -49,8 +50,12 @@ public class DeleteMess implements ICommand {
 
         List<Message> messageList =channel.getHistory().retrievePast(amountofmessage).complete();
         try {
+            for (Message message : messageList)
+            {
+                System.out.println(message.getContentDisplay());
+            }
             channel.asTextChannel().deleteMessages(messageList).queue();
-            System.out.println(messageList.toString());
+
         }
         catch (IllegalArgumentException e)
         {

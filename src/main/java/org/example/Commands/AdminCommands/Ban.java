@@ -35,7 +35,7 @@ public class Ban implements ICommand {
     public Collection<? extends OptionData> getOptions() {
         List<OptionData> optionDataList = new ArrayList<>();
         optionDataList.add(new OptionData(OptionType.USER,"name","name of user to ban",true));
-        optionDataList.add(new OptionData(OptionType.STRING,"reasone","reason of ban",false));
+        optionDataList.add(new OptionData(OptionType.STRING,"reason","reason of ban",false));
 
         return optionDataList;
     }
@@ -46,7 +46,7 @@ public class Ban implements ICommand {
 
         User user = slashCommandInteractionEvent.getOption("name").getAsUser();
         String reason;
-        reason = slashCommandInteractionEvent.getOption("reasone").getAsString();
+        reason = slashCommandInteractionEvent.getOption("reason").getAsString();
         if(reason.isEmpty())
         {
             slashCommandInteractionEvent.getGuild().ban(user,0, TimeUnit.DAYS).queue();
